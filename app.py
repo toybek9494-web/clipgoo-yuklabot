@@ -10,7 +10,7 @@ import yt_dlp
 logging.basicConfig(level=logging.INFO)
 
 # Railway'dan tokenni olish
-BOT_TOKEN = os.environ.get("9281776106:AAH79GywSlV4ut2wW1mHMLY237Mo-t0Ndak")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 if not BOT_TOKEN:
     raise ValueError("❌ BOT_TOKEN topilmadi! Railway Variables qismiga tokenni kiriting.")
