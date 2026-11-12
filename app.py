@@ -64,11 +64,10 @@ def download_video_sync(url: str, temp_dir: str) -> str | None:
         "nocheckcertificate": True,
         "socket_timeout": 30,
         "retries": 3,
-        "extractor_args": {
-            "youtube": {
-                "player_client": ["android", "ios", "web"]
-            }
-        },
+        # YouTube: android/ios clients do not support cookies, so use yt-dlp defaults.
+        # A JS runtime (node) is needed to solve YouTube's signature challenge.
+        "js_runtimes": {"node": {}},
+        "remote_components": ["ejs:github"],
         "http_headers": {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
